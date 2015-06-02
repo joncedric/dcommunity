@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @dance_class.time.strftime("%l:%M %p") %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @dance_class.description %>
+</p>
+
+<p>
+  <strong>Dance style:</strong>
+  <%= @dance_class.dance_style.name %>
+</p>
+
+<p>
+  <strong>Teacher:</strong>
+  <%= @dance_class.teacher.name %>
+</p>
+
+<%= link_to 'Edit', edit_dance_class_path(@dance_class) %> |
+<%= link_to 'Back', dance_classes_path %>

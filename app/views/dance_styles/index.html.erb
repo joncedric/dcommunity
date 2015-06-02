@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Dance Styles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dance_styles.each do |dance_style| %>
+      <tr>
+        <td><%= dance_style.name %></td>
+        <td><%= dance_style.description %></td>
+        <td><%= link_to 'Show', dance_style %></td>
+        <td><%= link_to 'Edit', edit_dance_style_path(dance_style) %></td>
+        <td><%= link_to 'Destroy', dance_style, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dance style', new_dance_style_path %>

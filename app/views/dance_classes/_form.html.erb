@@ -1,0 +1,34 @@
+<%= form_for(@dance_class) do |f| %>
+  <% if @dance_class.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dance_class.errors.count, "error") %> prohibited this dance_class from being saved:</h2>
+
+      <ul>
+      <% @dance_class.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :time %><br>
+    <%= f.time_select :time %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :dance_style_id %><br>
+    <%= f.collection_select(:dance_style_id, @dance_styles, :id, :name, :include_blank => "Please select") %>
+
+  </div>
+  <div class="field">
+    <%= f.label :teacher_id %><br>
+    <%= f.collection_select(:teacher_id, @teachers, :id, :name, :include_blank => "Please select") %>  
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

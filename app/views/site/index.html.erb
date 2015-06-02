@@ -1,0 +1,9 @@
+<ul>
+  <li><%= link_to 'Studios', studios_path %></li>
+  <li><%= link_to 'Dance Classes', dance_classes_path %></li>
+  <%= form_tag(dance_classes_path, method: "get")  do %>
+    <%= select_tag "query", options_from_collection_for_select(@dance_styles, "id", "name") %>
+    <%= submit_tag("Search") %>
+  <% end %>
+  <li><%= link_to 'Events', events_path %></li>
+</ul>
