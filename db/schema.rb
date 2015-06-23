@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150521013926) do
+ActiveRecord::Schema.define(version: 20150623104014) do
 
   create_table "dance_classes", force: :cascade do |t|
     t.time     "time"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20150521013926) do
 
   create_table "events", force: :cascade do |t|
     t.string   "name"
-    t.time     "time"
+    t.datetime "time"
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
