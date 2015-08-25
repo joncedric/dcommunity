@@ -15,5 +15,10 @@
   <%= @event.description %>
 </p>
 
+<p>
+  <strong>Flyer Image:</strong>
+  <%= image_tag @event.flyer_image.url(:medium) %>
+</p>
+
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>

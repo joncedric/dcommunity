@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150521013926) do
+ActiveRecord::Schema.define(version: 20150623112642) do
 
   create_table "dance_classes", force: :cascade do |t|
     t.time     "time"
@@ -34,10 +34,14 @@ ActiveRecord::Schema.define(version: 20150521013926) do
 
   create_table "events", force: :cascade do |t|
     t.string   "name"
-    t.time     "time"
+    t.datetime "time"
     t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.string   "flyer_image_file_name"
+    t.string   "flyer_image_content_type"
+    t.integer  "flyer_image_file_size"
+    t.datetime "flyer_image_updated_at"
   end
 
   create_table "studios", force: :cascade do |t|
