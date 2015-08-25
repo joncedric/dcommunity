@@ -21,10 +21,10 @@ RSpec.feature "User visits event", :type => :feature do
   scenario "User sees cost" do
     extend ActionDispatch::TestProcess
     
-    Event.create(time: 2.days.since, name: "destructive steps", description: "asdasdasd", flyer_image: file)
+    Event.create(time: 2.days.since, name: "destructive steps", description: "asdasdasd", location: "sydney", cost: "Free")
     visit "/events/1"
 
-    expect(page).to have_css("img[src*='event_image']")
+    expect(page).to have_text("Free")
   end
   scenario "User sees style" do
     extend ActionDispatch::TestProcess
