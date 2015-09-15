@@ -8,24 +8,7 @@
 
   <div class="row">
     <div class="small-9 columns small-centered">
-      <% @upcoming_events.each do |event| %>
-        <article class="event">
-
-          <div class="event-date">
-            <p class="event-month">Sept</p>
-            <p class="event-day">18</p>
-          </div>
-
-          <div class="event-desc">
-            <h4 class="event-desc-header"><%= event.name %></h4>
-            <p class="event-desc-detail"><span class="event-desc-time"></span><%= event.description %></p>
-            <%= link_to 'View Details', event, class: "rsvp button" %>
-          </div>
-
-        </article>
-
-        <hr>
-      <% end %>
+      <%= cell(:event, collection: Event.all) %>
     </div>
   </div>
 

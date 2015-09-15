@@ -38,7 +38,8 @@ gem "paperclip", "~> 4.2"
 
 # Non Default Gems
 gem 'foundation-rails'
-
+gem 'cells', "~> 4.0.0"
+gem "cells-erb"
 
 
 group :development, :test do
