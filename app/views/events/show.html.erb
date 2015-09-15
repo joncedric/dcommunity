@@ -9,19 +9,18 @@
 </div>
 
 <div class="row">
-	<div class="column small-12">
+	<div class="column small-12 large-6">
 		<ul class="no-bullet">
 			<li><i class="fi-clock"></i><%= @event.time.strftime("%l:%M %p") %></li>
 			<li><%= @event.description %></li>
 		</ul>
 	</div>
+	<div class="column large-6">
+	  	<%= image_tag @event.flyer_image.url %>
+	</div>
 </div>
 
 
-<p>
-  <strong>Flyer Image:</strong>
-  <%= image_tag @event.flyer_image.url(:medium) %>
-</p>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
