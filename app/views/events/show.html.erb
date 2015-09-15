@@ -21,9 +21,36 @@
 					</div>
 				</div>
 			</li>
-			<li><%= @event.location %></li>
-			<li><%= @event.cost %></li>
-			<li><%= @event.dance_styles.map(&:name).join(", ") %></li>
+			<li>
+				<div class="row">
+					<div class="column small-1">
+						<i class="fi-map"></i>
+					</div>
+					<div class="column small-11">
+						<%= @event.location %>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="row">
+					<div class="column small-1">
+						<i class="fi-dollar"></i>
+					</div>
+					<div class="column small-11">
+						<%= @event.cost %>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="row">
+					<div class="column small-1">
+						<i class="fi-blind"></i>
+					</div>
+					<div class="column small-11">
+						<%= @event.dance_styles.map(&:name).join(", ") %>
+					</div>
+				</div>
+			</li>
 			</ul>
 		</ul>
 	</div>
