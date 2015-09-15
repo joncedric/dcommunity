@@ -10,30 +10,26 @@ RSpec.feature "User visits event", :type => :feature do
 
     expect(page).to have_css("img[src*='event_image']")
   end
-  scenario "User sees location" do
-    extend ActionDispatch::TestProcess
-    
+
+  scenario "User sees location" do    
     Event.create(time: 2.days.since, name: "destructive steps", description: "asdasdasd", location: "sydney")
     visit "/events/1"
 
     expect(page).to have_text("sydney")
   end
+
   scenario "User sees cost" do
-    extend ActionDispatch::TestProcess
-    
     Event.create(time: 2.days.since, name: "destructive steps", description: "asdasdasd", location: "sydney", cost: "Free")
     visit "/events/1"
 
     expect(page).to have_text("Free")
   end
+
   scenario "User sees style" do
-    extend ActionDispatch::TestProcess
-    
     Event.create(time: 2.days.since, name: "destructive steps", description: "asdasdasd", dance_styles: [DanceStyle.new(name: "Locking"), DanceStyle.new(name: "Popping")])
     visit "/events/1"
 
 	expect(page).to have_text("Popping")
 	expect(page).to have_text("Locking")
   end
-
 end
