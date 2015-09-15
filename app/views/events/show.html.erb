@@ -17,14 +17,19 @@
 						<i class="fi-clock"></i>
 					</div>
 					<div class="column small-11">
-						<%= @event.time.strftime("%l:%M %p") %>
+						<%= @event.time.strftime("%A %-d %b %l:%M %p") %>
 					</div>
 				</div>
-				</li>
-			<li><%= simple_format @event.description %></li>
+			</li>
 		</ul>
 	</div>
 	<div class="column large-6">
 	  	<%= image_tag @event.flyer_image.url %>
+	</div>
+</div>
+<div class="row">
+	<div class="column small-12">
+		<h3>Description</h3>
+		<p><%= simple_format @event.description %></p>
 	</div>
 </div>
