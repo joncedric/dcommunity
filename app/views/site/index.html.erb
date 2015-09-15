@@ -1,12 +1,17 @@
 <ul>
-  <li><%= link_to 'Studios', studios_path %></li>
-  <li><%= link_to 'Dance Classes', dance_classes_path %></li>
   <%= form_tag(dance_classes_path, method: "get")  do %>
     <%= select_tag "query", options_from_collection_for_select(@dance_styles, "id", "name") %>
     <%= submit_tag("Search") %>
   <% end %>
-  <li><%= link_to 'Events', events_path %></li>
+
   <h2>Upcoming Events</h2>
+
+  <div class="row">
+    <div class="small-9 columns small-centered">
+      <%= cell(:event, collection: Event.all) %>
+    </div>
+  </div>
+
 
   <table>
   <thead>
