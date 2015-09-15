@@ -11,6 +11,11 @@
 </p>
 
 <p>
+  <strong>Location:</strong>
+  <%= @event.location %>
+</p>
+
+<p>
   <strong>Description:</strong>
   <%= @event.description %>
 </p>
@@ -19,6 +24,18 @@
   <strong>Flyer Image:</strong>
   <%= image_tag @event.flyer_image.url(:medium) %>
 </p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @event.cost %>
+</p>
+
+<p>
+  <strong>Styles:</strong>
+  <%= @event.dance_styles.map(&:name).join(", ") %>
+</p>
+
+
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
