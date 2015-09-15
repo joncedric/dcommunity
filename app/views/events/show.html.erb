@@ -21,6 +21,10 @@
 					</div>
 				</div>
 			</li>
+			<li><%= @event.location %></li>
+			<li><%= @event.cost %></li>
+			<li><%= @event.dance_styles.map(&:name).join(", ") %></li>
+			</ul>
 		</ul>
 	</div>
 	<div class="column large-6">

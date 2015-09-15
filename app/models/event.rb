@@ -1,4 +1,6 @@
 class Event < ActiveRecord::Base
+	has_and_belongs_to_many :dance_styles
+
 	validates :name, presence: true
 	validates :time, presence: true
 	validates :description, presence: true
