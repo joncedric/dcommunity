@@ -1,19 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Time:</strong>
-  <%= @event.time.strftime("%l:%M %p") %>
-</p>
+<div class="row">
+	<div class="column small-12">
+		<h2>
+		  <%= @event.name %>
+		</h2>
+	</div>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @event.name %>
-</p>
+<div class="row">
+	<div class="column small-12">
+		<ul class="no-bullet">
+			<li><i class="fi-clock"></i><%= @event.time.strftime("%l:%M %p") %></li>
+			<li><%= @event.description %></li>
+		</ul>
+	</div>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
 
 <p>
   <strong>Flyer Image:</strong>
