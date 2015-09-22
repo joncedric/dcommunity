@@ -51,6 +51,6 @@ RSpec.feature "User visits event", :type => :feature do
     Event.create(time: Time.zone.parse('2015-08-22 18:00'), end_time: Time.zone.parse('2015-08-24 21:00'), name: "destructive steps", description: "asdasdasd", dance_styles: [DanceStyle.new(name: "Locking"), DanceStyle.new(name: "Popping")], host: "Dancekool")
     visit "/events/1"
 
-  	expect(page).to have_text("22 August 6:00pm - 30 August 9:00pm")
+  	expect(page).to have_text("22 August 6:00pm - 24 August 9:00pm")
   end
 end

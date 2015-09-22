@@ -17,7 +17,11 @@
 						<i class="fi-clock"></i>
 					</div>
 					<div class="column small-11">
-						<%= "#{@event.time.strftime('%A %-d %B at %l:%M%P')}" + (@event.end_time.present? ? " - #{@event.end_time.strftime('%l:%M%P')}" : "") %>
+						<% if @event.end_time.present? && @event.time.to_date != @event.end_time.to_date %>
+							<%= "#{@event.time.strftime('%-d %B %l:%M%P')}" + " - #{@event.end_time.strftime('%-d %B %l:%M%P')}" %>					
+						<% else %>
+							<%= "#{@event.time.strftime('%A %-d %B at %l:%M%P')}" + (@event.end_time.present? ? " - #{@event.end_time.strftime('%l:%M%P')}" : "") %>
+						<% end %>
 					</div>
 				</div>
 			</li>
