@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.feature "User visits event", :type => :feature do
   scenario "User sees image" do
     extend ActionDispatch::TestProcess
-    
+
     file = fixture_file_upload('files/event_image.jpg', 'image/jpg')
     Event.create(time: 2.days.since, name: "destructive steps", description: "asdasdasd", flyer_image: file)
     visit "/events/1"
@@ -11,7 +11,7 @@ RSpec.feature "User visits event", :type => :feature do
     expect(page).to have_css("img[src*='event_image']")
   end
 
-  scenario "User sees location" do    
+  scenario "User sees location" do
     Event.create(time: 2.days.since, name: "destructive steps", description: "asdasdasd", location: "sydney")
     visit "/events/1"
 
@@ -29,7 +29,14 @@ RSpec.feature "User visits event", :type => :feature do
     Event.create(time: 2.days.since, name: "destructive steps", description: "asdasdasd", dance_styles: [DanceStyle.new(name: "Locking"), DanceStyle.new(name: "Popping")])
     visit "/events/1"
 
-	expect(page).to have_text("Popping")
-	expect(page).to have_text("Locking")
+    expect(page).to have_text("Popping")
+    expect(page).to have_text("Locking")
+  end
+
+  scenario "User sees host" do
+    Event.create(time: 2.days.since, name: "destructive steps", description: "asdasdasd", dance_styles: [DanceStyle.new(name: "Locking"), DanceStyle.new(name: "Popping")], host: "Dancekool")
+    visit "/events/1"
+
+  	expect(page).to have_text("Dancekool")
   end
 end
