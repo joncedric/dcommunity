@@ -1,41 +1,66 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Time:</strong>
-  <%= @event.time.strftime("%l:%M %p") %>
-</p>
+<div class="row">
+	<div class="column small-12">
+		<h2>
+		  <%= @event.name %>
+		</h2>
+	</div>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @event.name %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @event.location %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
-
-<p>
-  <strong>Flyer Image:</strong>
-  <%= image_tag @event.flyer_image.url(:medium) %>
-</p>
-
-<p>
-  <strong>Cost:</strong>
-  <%= @event.cost %>
-</p>
-
-<p>
-  <strong>Styles:</strong>
-  <%= @event.dance_styles.map(&:name).join(", ") %>
-</p>
-
-
-
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<div class="row">
+	<div class="column small-12 large-6">
+		<ul class="no-bullet">
+			<li>
+				<div class="row">
+					<div class="column small-1">
+						<i class="fi-clock"></i>
+					</div>
+					<div class="column small-11">
+						<%= @event.time.strftime("%A %-d %b %l:%M %p") %>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="row">
+					<div class="column small-1">
+						<i class="fi-map"></i>
+					</div>
+					<div class="column small-11">
+						<%= @event.location %>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="row">
+					<div class="column small-1">
+						<i class="fi-dollar"></i>
+					</div>
+					<div class="column small-11">
+						<%= @event.cost %>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="row">
+					<div class="column small-1">
+						<i class="fi-blind"></i>
+					</div>
+					<div class="column small-11">
+						<%= @event.dance_styles.map(&:name).join(", ") %>
+					</div>
+				</div>
+			</li>
+			</ul>
+		</ul>
+	</div>
+	<div class="column large-6">
+	  	<%= image_tag @event.flyer_image.url %>
+	</div>
+</div>
+<div class="row">
+	<div class="column small-12">
+		<h3>Description</h3>
+		<p><%= simple_format @event.description %></p>
+	</div>
+</div>
