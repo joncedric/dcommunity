@@ -38,12 +38,19 @@ RSpec.feature "User visits event", :type => :feature do
     visit "/events/1"
 
     expect(page).to have_text("Dancekool")
-  end  
+  end
 
   scenario "User sees time duration in hours" do
     Event.create(time: Time.zone.parse('2015-08-22 18:00'), end_time: Time.zone.parse('2015-08-22 21:00'), name: "destructive steps", description: "asdasdasd", dance_styles: [DanceStyle.new(name: "Locking"), DanceStyle.new(name: "Popping")], host: "Dancekool")
     visit "/events/1"
 
-  	expect(page).to have_text("Saturday 22 August at 6:00pm - 9:00pm")
+    expect(page).to have_text("Saturday 22 August at 6:00pm - 9:00pm")
+  end
+
+  scenario "User sees time duration in days if start and end time are days apart" do
+    Event.create(time: Time.zone.parse('2015-08-22 18:00'), end_time: Time.zone.parse('2015-08-24 21:00'), name: "destructive steps", description: "asdasdasd", dance_styles: [DanceStyle.new(name: "Locking"), DanceStyle.new(name: "Popping")], host: "Dancekool")
+    visit "/events/1"
+
+  	expect(page).to have_text("22 August 6:00pm - 30 August 9:00pm")
   end
 end
