@@ -1,3 +1,21 @@
 // Place all the styles related to the site controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "foundation/components/block-grid";
+
+.search_style {
+  @include block-grid(
+    $spacing: 2em,
+    $base-style: false
+  );
+
+  h3{
+  	text-align: center;
+  }
+
+  li{
+  	border: 1px gray solid;
+  }
+}
+
