@@ -10,6 +10,8 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
+@import 'foundation';
+
 html {
     color: #222;
     font-size: 1em;
@@ -111,35 +113,51 @@ textarea {
     }
 }
 
-.event {
-  padding: 1rem 1rem 1rem 0;
-  display: table;
-}
-
-.event-date {
-  width: 6rem;
-  margin: 0 auto 1rem;
-  display: table-cell;
+.event-date-container {
+  position: relative;
   width: auto;
+  display: block;
+
+  .event-date-background {
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+  }
+
+  .event-date-overlay {
+    position: absolute;
+    top: 0px;
+    width: 70px;
+    height: 70px;
+    background: black;
+    opacity: 0.5;
+    z-index: 10;
+  }
+
+  .event-date {
+    width: 70px;
+    height: 70px;
+
+    position: absolute;
+    top: 0px;
+    color: white;
+    z-index: 20;
+    padding: 18px;
+  }
 
   .event-month {
-    margin: 0;
-    background: #eee;
-    padding: 0.5rem 2rem;
     text-align: center;
+    margin: 0px;
   }
 
   .event-day {
-    margin: 0;
-    border: 1px solid #eee;
-    padding: 0 2rem;
     text-align: center;
     font-size: 2rem;
+    margin: 0px;
   }
 }
 
 .event-desc {
-  padding: 0 0 0 1rem;
   text-align: left;
   display: table-cell;
   vertical-align: top;
@@ -166,7 +184,20 @@ textarea {
 }
 
 
+@media #{$small-only} {
+  .event-desc-header {
+    margin: 0 0 0.5rem 0;
+    padding: 0;
+    font-size: 0.9em;
+    font-weight: bold;
+  }
 
+  .event-desc-detail {
+    margin: 0 0 0.25rem;
+    padding: 0;
+    font-size: 0.8em;
+  }
+}
 
 
 

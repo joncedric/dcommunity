@@ -1,24 +1,31 @@
 <article class="event">
-
-  <div class="event-date">
-    <p class="event-month"><%= month %></p>
-    <p class="event-day"><%= day %></p>
-  </div>
-
-  <div class="event-desc">
-    <h4 class="event-desc-header"><%= name %></h4>
-    <p class="event-desc-detail">
-        <% if model.end_time.present? && model.time.to_date != model.end_time.to_date %>
-            <%= "#{model.time.strftime('%-d %B %l:%M%P')}" + " - #{model.end_time.strftime('%-d %B %l:%M%P')}" %>
-        <% else %>
-            <%= "#{model.time.strftime('%A %-d %B at %l:%M%P')}" + (model.end_time.present? ? " - #{model.end_time.strftime('%l:%M%P')}" : "") %>
-        <% end %>
-    </p>
-    <p class="event-desc-detail"><%= location %></p>
-    <p class="event-desc-detail"><%= styles %></p>
-    <%= link_to 'View Details', model, class: "rsvp button" %>
-  </div>
-
+    <div class="row">
+        <div class="column small-3 large-3">
+            <div class="event-date-container">
+                <div class="event-date">
+                    <p class="event-month"><%= month %></p>
+                    <p class="event-day"><%= day %></p>
+                </div>
+                <%= image_tag model.flyer_image.url(:small), class: "event-date-background" %>
+                <div class="event-date-overlay">
+                </div>
+            </div>
+        </div>
+        <div class="column small-9 large-9">
+          <div class="event-desc">
+            <h4 class="event-desc-header"><%= name %></h4>
+            <p class="event-desc-detail muted">
+                <% if model.end_time.present? && model.time.to_date != model.end_time.to_date %>
+                    <%= "#{model.time.strftime('%-d %B %l:%M%P')}" + " - #{model.end_time.strftime('%-d %B %l:%M%P')}" %>
+                <% else %>
+                    <%= "#{model.time.strftime('%A %-d %B at %l:%M%P')}" + (model.end_time.present? ? " - #{model.end_time.strftime('%l:%M%P')}" : "") %>
+                <% end %>
+            </p>
+            <p class="event-desc-detail"><%= location %></p>
+            <p class="event-desc-detail"><%= styles %></p>
+          </div>
+        </div>
+    </div>
 </article>
 
 <hr>

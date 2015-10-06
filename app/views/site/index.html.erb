@@ -3,10 +3,9 @@
   <%= submit_tag("Search") %>
 <% end %>
 
-<h2>Upcoming Events</h2>
-
 <div class="row">
   <div class="small-12 large-9 columns large-centered">
+    <h2>Upcoming Events</h2>
     <%= cell(:event, collection: Event.all) %>
   </div>
 </div>

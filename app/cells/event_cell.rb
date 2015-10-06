@@ -12,7 +12,7 @@ class EventCell < Cell::ViewModel
   end
 
   def month
-    model.time.strftime("%b")
+    model.time.strftime("%b").upcase
   end
 
   def day
