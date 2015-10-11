@@ -1,0 +1,24 @@
+{
+  "name": "dcommunity",
+  "version": "0.0.0",
+  "homepage": "https://github.com/joncedric/dcommunity",
+  "authors": [
+    "MJ <mark.a@serviceseeking.com.au>"
+  ],
+  "description": "Dance Events, Classes, Studios",
+  "main": "",
+  "moduleType": [],
+  "keywords": [
+    "dance"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/components",
+    "test",
+    "tests"
+  ]
+}

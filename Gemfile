@@ -42,6 +42,7 @@ gem 'cells', "~> 4.0.0"
 gem "cells-erb"
 gem 'foundation-icons-sass-rails'
 gem 'geocoder'
+gem 'gmaps4rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
