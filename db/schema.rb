@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150922112130) do
+ActiveRecord::Schema.define(version: 20151011084954) do
 
   create_table "dance_classes", force: :cascade do |t|
     t.time     "time"
@@ -54,6 +54,8 @@ ActiveRecord::Schema.define(version: 20150922112130) do
     t.string   "cost"
     t.string   "host"
     t.datetime "end_time"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   create_table "studios", force: :cascade do |t|
