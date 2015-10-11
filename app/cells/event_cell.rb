@@ -8,7 +8,7 @@ class EventCell < Cell::ViewModel
   private
 
   def name
-    model.name.truncate(50)
+    model.name
   end
 
   def month
