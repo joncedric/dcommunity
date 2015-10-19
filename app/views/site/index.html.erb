@@ -1,17 +1,9 @@
-<%- if false %>
-	<%= form_tag(dance_classes_path, method: "get")  do %>
-	  <%= select_tag "query", options_from_collection_for_select(@dance_styles, "id", "name") %>
-	  <%= submit_tag("Search") %>
-	<% end %>
-<% end %>
-
 <h2>Sydney Dance Events</h2>
 
 <ul class="search-style small-block-grid-2 large-block-grid-4">
-  <li><%= link_to 'Hip Hop', root_path, class:'style-block' %></li>
-  <li><%= link_to 'Breaking', root_path, class:'style-block' %></li >
-  <li><%= link_to 'Popping', root_path, class:'style-block' %></li>
-  <li><%= link_to 'Locking', root_path, class:'style-block' %></li>
+  <% @dance_styles.each do |dance_style| %>
+  	<li><%= link_to dance_style.name, dance_style_path(dance_style), class:'style-block' %></li>
+  <% end %>
 </ul>
 
 <h2>All Upcoming Events</h2>
