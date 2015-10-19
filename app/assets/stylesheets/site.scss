@@ -4,18 +4,18 @@
 
 @import "foundation/components/block-grid";
 
-.search_style {
-  @include block-grid(
-    $spacing: 2em,
-    $base-style: false
-  );
-
-  h3{
-  	text-align: center;
-  }
-
+.search-style {
   li{
   	border: 1px gray solid;
+    padding: 0;
+  }
+
+  .style-block{
+    width: 100%;
+    height: 100%;
+    display: block;
+    padding: 20px;
+    text-align: center;  
   }
 }
 
