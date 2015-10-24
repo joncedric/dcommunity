@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.1'
 
 # migrated database to use mysql. Source: http://wiki.summercode.com/convert_a_ruby_on_rails_app_from_sqlite_to_mysql_dbs
-gem 'mysql2'
+gem 'mysql2', '~> 0.3.18'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
