@@ -10,6 +10,7 @@ class DanceStylesController < ApplicationController
   # GET /dance_styles/1
   # GET /dance_styles/1.json
   def show
+    @events = @dance_style.events.where("time >= ?", Time.now)
   end
 
   # GET /dance_styles/new

@@ -1,0 +1,103 @@
+
+---
+dance_styles:
+  columns:
+  - id
+  - name
+  - description
+  - created_at
+  - updated_at
+  records:
+  - - 1
+    - Popping
+    - Robots and stuff
+    - '2015-09-15 12:56:47.946402'
+    - '2015-09-15 12:56:47.946402'
+  - - 2
+    - Locking
+    - Locksmiths
+    - '2015-09-15 12:57:03.300627'
+    - '2015-09-15 12:57:03.300627'
+
+---
+events:
+  columns:
+  - id
+  - name
+  - time
+  - description
+  - created_at
+  - updated_at
+  - flyer_image_file_name
+  - flyer_image_content_type
+  - flyer_image_file_size
+  - flyer_image_updated_at
+  - location
+  - cost
+  - host
+  - end_time
+  records:
+  - - 1
+    - asdfa
+    - '2015-06-25 10:24:28.617436'
+    - asdfasfd
+    - '2015-06-23 10:24:28.623079'
+    - '2015-06-23 10:24:28.623079'
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+  - - 2
+    - Synergy 7
+    - '2015-09-08 11:37:06.816959'
+    - It's a inter-university freestyle battle
+    - '2015-09-08 11:37:12.936651'
+    - '2015-09-08 11:37:12.936651'
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+  - - 3
+    - ' Sydney Cypher Supremo IV feat. Adverse, Makoto & Run Jay'
+    - '2015-09-15 11:53:00.000000'
+    - "PRESENTED BY PLAY BAR X MINDS OF MISCHIEF X 143 LSF\r\n\r\nSYDNEY CYPHER SUPREMO
+      is back for round IV…\r\n\r\n3 categories (Breakin’, Funk Styles, Freestyle
+      Jam)\r\nMystery judges, \r\n$100 for each Supremo!\r\n\r\n*********\r\n\r\nDJ
+      ADVERSE //\r\nMAKOTO // \r\nRUNJ AY // \r\n\r\n*********\r\n\r\nWHAT: SYDNEY
+      CYPHER SUPREMO IV \r\nfeat. DJ ADVERSE, MAKOTO & RUN JAY\r\n\r\nWHEN: FRIDAY
+      18 SEPTEMBER 2015 \r\nDOORS OPEN 4PM \r\nMUSIC KICKS AT 6PM \r\nHAPPY HOUR 6PM-8PM\r\n\r\nWHERE:
+      PLAY BAR SYDNEY. \r\nBASEMENT 72 CAMPBELL STREET SURRY HILLS\r\n\r\nFREE ENTRY,
+      \r\nFIRST COME FIRST SERVED. \r\nTHE WORLD IS INVITED.\r\n\r\nFor group bookings,
+      please email info@playbar.com.au\r\n\r\nhttp://playbar.com.au/project/sydney-cypher-supremo-iv-dj-adverse-makoto-run-jayfriday-18-09-2015/"
+    - '2015-09-15 11:53:48.342477'
+    - '2015-10-11 10:59:32.385432'
+    - 11988365_491917980983939_974313478682980520_n.jpg
+    - image/jpeg
+    - 30966
+    - '2015-10-10 22:54:38.414595'
+    - 1, 93 Bathurst St, Sydney NSW
+    - $20/battler
+    - Dancekool
+    - '2015-09-15 13:53:00.000000'
+
+---
+dance_styles_events:
+  columns:
+  - id
+  - event_id
+  - dance_style_id
+  records:
+  - - 1
+    - 3
+    - 1
+  - - 2
+    - 3
+    - 2

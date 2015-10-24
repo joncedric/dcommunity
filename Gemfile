@@ -3,8 +3,10 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
+# migrated database to use mysql. Source: http://wiki.summercode.com/convert_a_ruby_on_rails_app_from_sqlite_to_mysql_dbs
+gem 'mysql2', '~> 0.3.18'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -43,6 +45,9 @@ gem "cells-erb"
 gem 'foundation-icons-sass-rails'
 gem 'geocoder'
 gem 'gmaps4rails'
+
+#temporary gems:
+gem 'yaml_db'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
