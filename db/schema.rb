@@ -54,8 +54,8 @@ ActiveRecord::Schema.define(version: 20151011084954) do
     t.string   "cost",                     limit: 255
     t.string   "host",                     limit: 255
     t.datetime "end_time"
-    t.float    "latitude"
-    t.float    "longitude"
+    t.float    "latitude",                 limit: 24
+    t.float    "longitude",                limit: 24
   end
 
   create_table "studios", force: :cascade do |t|

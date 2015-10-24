@@ -44,7 +44,6 @@ gem 'cells', "~> 4.0.0"
 gem "cells-erb"
 gem 'foundation-icons-sass-rails'
 gem 'geocoder'
-gem 'gmaps4rails'
 
 #temporary gems:
 gem 'yaml_db'
