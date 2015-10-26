@@ -2,7 +2,7 @@
     <div class="row collapse">
         <div class="column small-2 large-3">
             <div class="event-date-container">
-                <%= image_tag model.flyer_image.url(:square), class: "event-date-background" %>
+                <%= image_tag(model.flyer_image.url(:square), class: "event-date-background") %>  
                 <div class="event-date">
                     <p class="event-month"><%= month %></p>
                     <p class="event-day"><%= day %></p>
