@@ -44,6 +44,7 @@ gem 'foundation-rails'
 gem 'cells', "~> 4.0.0"
 gem "cells-erb"
 gem 'foundation-icons-sass-rails'
+gem 'rails_12factor', group: :production
 
 #temporary gems:
 gem 'yaml_db'
