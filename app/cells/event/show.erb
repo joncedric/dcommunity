@@ -1,13 +1,15 @@
 <article class="event-card">
     <div class="row collapse">
         <div class="column small-2 large-3">
-            <div class="event-date-container">
-                <%= image_tag(model.flyer_image.url(:square), class: "event-date-background") %>  
-                <div class="event-date">
-                    <p class="event-month"><%= month %></p>
-                    <p class="event-day"><%= day %></p>
+            <%= link_to event_path(model) do %>
+                <div class="event-date-container">
+                    <%= image_tag(model.flyer_image.url(:square), class: "event-date-background") %>  
+                    <div class="event-date">
+                        <p class="event-month"><%= month %></p>
+                        <p class="event-day"><%= day %></p>
+                    </div>
                 </div>
-            </div>
+            <% end %>
         </div>
         <div class="column small-10 large-9">
           <div class="event-desc">
