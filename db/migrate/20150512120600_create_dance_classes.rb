@@ -4,7 +4,7 @@ class CreateDanceClasses < ActiveRecord::Migration
       t.time :time
       t.text :description
       # t.references :dance_style, index: true, foreign_key: true
-      t.references :teacher, index: true, foreign_key: true
+      # t.references :teacher, index: true, foreign_key: true
 
       t.timestamps null: false
     end
