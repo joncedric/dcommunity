@@ -5,6 +5,8 @@
 @import "foundation/components/block-grid";
 
 .search-style {
+  padding-bottom: 20px;
+
   li{
   	border: 1px gray solid;
     padding: 0;
@@ -18,4 +20,3 @@
     text-align: center;  
   }
 }
-

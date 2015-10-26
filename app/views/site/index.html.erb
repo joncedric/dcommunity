@@ -1,16 +1,11 @@
-<h2>Sydney Dance Events</h2>
-
-<ul class="search-style small-block-grid-2 large-block-grid-4">
-  <% @dance_styles.each do |dance_style| %>
-  	<li><%= link_to dance_style.name, dance_style_path(dance_style), class:'style-block' %></li>
-  <% end %>
-</ul>
-
-<h2>All Upcoming Events</h2>
-
 <div class="row">
   <div class="small-12 large-9 columns large-centered">
     <h2>Upcoming Events</h2>
+    <ul class="search-style small-block-grid-2 large-block-grid-4">
+      <% @dance_styles.each do |dance_style| %>
+      	<li><%= link_to dance_style.name, dance_style_path(dance_style), class:'style-block' %></li>
+      <% end %>
+    </ul>
     <%= cell(:event, collection: Event.all) %>
   </div>
 </div>
