@@ -7,7 +7,6 @@
 		</h2>
 	</div>
 </div>
-
 <div class="row">
 	<div class="column small-12 large-6">
 		<ul class="no-bullet">
@@ -18,7 +17,7 @@
 					</div>
 					<div class="column small-11">
 						<% if @event.end_time.present? && @event.time.to_date != @event.end_time.to_date %>
-							<%= "#{@event.time.strftime('%-d %B %l:%M%P')}" + " - #{@event.end_time.strftime('%-d %B %l:%M%P')}" %>					
+							<%= "#{@event.time.strftime('%-d %B %l:%M%P')}" + " - #{@event.end_time.strftime('%-d %B %l:%M%P')}" %>
 						<% else %>
 							<%= "#{@event.time.strftime('%A %-d %B at %l:%M%P')}" + (@event.end_time.present? ? " - #{@event.end_time.strftime('%l:%M%P')}" : "") %>
 						<% end %>
@@ -31,7 +30,7 @@
 						<i class="fi-map"></i>
 					</div>
 					<div class="column small-11">
-						<%= @event.location %>
+						<%= @event.location %> <%= link_to "(map)", "http://maps.google.com/?q=#{@event.location}" %>
 					</div>
 				</div>
 			</li>
