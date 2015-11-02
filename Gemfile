@@ -1,11 +1,13 @@
 source 'https://rubygems.org'
 
+ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 
 # migrated database to use mysql. Source: http://wiki.summercode.com/convert_a_ruby_on_rails_app_from_sqlite_to_mysql_dbs
-gem 'mysql2', '~> 0.3.18'
+# gem 'mysql2', '~> 0.3.18'
+gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -44,6 +46,7 @@ gem 'cells', "~> 4.0.0"
 gem "cells-erb"
 gem 'foundation-icons-sass-rails'
 gem 'geocoder'
+gem 'rails_12factor', group: :production
 
 #temporary gems:
 gem 'yaml_db'
