@@ -6,6 +6,6 @@
       	<li><%= link_to dance_style.name, dance_style_path(dance_style), class:'style-block' %></li>
       <% end %>
     </ul>
-    <%= cell(:event, collection: Event.all) %>
+    <%= cell(:event, collection: @upcoming_events) %>
   </div>
 </div>
