@@ -47,6 +47,7 @@ gem "cells-erb"
 gem 'foundation-icons-sass-rails'
 gem 'geocoder'
 gem 'rails_12factor', group: :production
+gem 'aws-sdk'
 
 #temporary gems:
 gem 'yaml_db'

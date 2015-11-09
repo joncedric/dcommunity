@@ -19,15 +19,20 @@ ActiveRecord::Schema.define(version: 20151011084954) do
   create_table "dance_classes", force: :cascade do |t|
     t.time     "time"
     t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "dance_style_id"
+    t.integer  "teacher_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
+  add_index "dance_classes", ["dance_style_id"], name: "index_dance_classes_on_dance_style_id", using: :btree
+  add_index "dance_classes", ["teacher_id"], name: "index_dance_classes_on_teacher_id", using: :btree
+
   create_table "dance_styles", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name",        limit: 255
     t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "dance_styles_events", force: :cascade do |t|
@@ -39,35 +44,35 @@ ActiveRecord::Schema.define(version: 20151011084954) do
   add_index "dance_styles_events", ["event_id"], name: "index_dance_styles_events_on_event_id", using: :btree
 
   create_table "events", force: :cascade do |t|
-    t.string   "name"
-    t.text     "description"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "name",                     limit: 255
     t.datetime "time"
-    t.string   "flyer_image_file_name"
-    t.string   "flyer_image_content_type"
+    t.text     "description"
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+    t.string   "flyer_image_file_name",    limit: 255
+    t.string   "flyer_image_content_type", limit: 255
     t.integer  "flyer_image_file_size"
     t.datetime "flyer_image_updated_at"
-    t.string   "location"
-    t.string   "cost"
-    t.string   "host"
+    t.string   "location",                 limit: 255
+    t.string   "cost",                     limit: 255
+    t.string   "host",                     limit: 255
     t.datetime "end_time"
-    t.float    "latitude",                 limit: 24
-    t.float    "longitude",                limit: 24
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   create_table "studios", force: :cascade do |t|
-    t.string   "name"
-    t.string   "description"
-    t.string   "website"
+    t.string   "name",        limit: 255
+    t.string   "description", limit: 255
+    t.string   "website",     limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "teachers", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
 end
