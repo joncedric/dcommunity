@@ -5,7 +5,7 @@ class Event < ActiveRecord::Base
 	validates :time, presence: true
 	validates :description, presence: true
 
-	has_attached_file :flyer_image, :styles => { :small => "70x70>", :medium => "300x300>", :thumb => "100x100#", :square => "180x180#" }, :default_url => "/assets/blank_event.jpg"
+	has_attached_file :flyer_image, :styles => { :small => "70x70>", :medium => "300x300>", :thumb => "100x100#", :square => "180x180#" }, :default_url => "blank_event.jpg"
 	validates_attachment_content_type :flyer_image, :content_type => /\Aimage\/.*\Z/
 
   geocoded_by :location
