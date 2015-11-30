@@ -16,8 +16,24 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
+    <%= f.label :cost %><br>
+    <%= f.text_field :cost %>
+  </div>
+  <div class="field">
+    <%= f.label :host %><br>
+    <%= f.text_field :host %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br>
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
     <%= f.label :time %><br>
     <%= f.datetime_select :time %>
+  </div>
+  <div class="field">
+    <%= f.label :end_time %><br>
+    <%= f.datetime_select :end_time %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
